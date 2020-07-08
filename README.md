@@ -57,13 +57,35 @@ In the body enter:
 }
 ```
 
-Expect refresh and access:
+Expect some refresh and access:
 ```
 {
     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5NDI4MzQ5MiwianRpIjoiYzBkNjUyY2JlNDk1NDE0YzlhYTVmMWMyY2QxMTdmZTEiLCJ1c2VyX2lkIjoxfQ._WmaX_q9Ejf7ZBryOFYJr7JfLRwNYoSOtT_YiU26Drc",
     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0MTk3MzkyLCJqdGkiOiJkMWIyMjA2OTY3MTY0NjA4YjYxNDk0MGEyYTQzMGVjNSIsInVzZXJfaWQiOjF9.OsxE0wGiQxWZqLBHx-b0IBOEWwzkJ6ng8u_Z1dGAzKw"
 }
 ```
+The access token is active for 5 minutes.
+
+3. After that time you may use refresh token.
+Create POST request for `http://127.0.0.1:8000/api/token/refresh/`, go to body section and select `raw` and the `JSON`.
+In the body enter:
+
+```
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5NDI4MzQ5MiwianRpIjoiYzBkNjUyY2JlNDk1NDE0YzlhYTVmMWMyY2QxMTdmZTEiLCJ1c2VyX2lkIjoxfQ._WmaX_q9Ejf7ZBryOFYJr7JfLRwNYoSOtT_YiU26Drc"
+}
+```
+
+Expect some access:
+
+```
+{
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0MTk4MzUwLCJqdGkiOiJjM2NmOTE4NDAyZmY0MDFkOTNjZmNjY2MyYmJiNDFiYiIsInVzZXJfaWQiOjF9.qHBuz8L2XRmfpX27Z_TaC_rZDMsUr3Nb7bW5wpIOzYw"
+}
+```
+
+The refresh token is valid for the next 24 hours.
+
 
 ## Info
 
