@@ -86,6 +86,18 @@ Expect some access:
 
 The refresh token is valid for the next 24 hours.
 
+3. Create GET request for `http://127.0.0.1:8000/hello/`, go to Authorization and select from type Bearer Token, paste copied access token and hit the request.
+
+Expect:
+
+```
+{
+    "message": "Hello, World!"
+}
+```
+
+
+
 
 ## Info
 
